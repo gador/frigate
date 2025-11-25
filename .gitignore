@@ -11,11 +11,9 @@ models
 *.mp4
 *.db
 *.csv
-frigate/version.py
 web/build
 web/node_modules
 web/coverage
-web/.env
 core
 !/web/**/*.ts
 .idea/*
