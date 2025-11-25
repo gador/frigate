@@ -49,7 +49,7 @@ push: push-boards
 		--push
 
 run: local
-	docker run --rm --publish=5000:5000 --volume=${PWD}/config:/config frigate:latest
+	docker run --rm --publish=5001:5001 --volume=${PWD}/config:/config frigate:latest
 
 run_tests: local
 	docker run --rm --workdir=/opt/frigate --entrypoint= frigate:latest \

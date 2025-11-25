@@ -1,7 +1,7 @@
 
 # Internal (IPv4 always; IPv6 optional)
-listen 5000;
-{{ if .ipv6 }}{{ if .ipv6.enabled }}listen [::]:5000;{{ end }}{{ end }}
+listen 5001;
+{{ if .ipv6 }}{{ if .ipv6.enabled }}listen [::]:5001;{{ end }}{{ end }}
 
 
 # intended for external traffic, protected by auth

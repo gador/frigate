@@ -6,7 +6,7 @@ __all__ = ["IPv6Config", "NetworkingConfig"]
 
 
 class IPv6Config(FrigateBaseModel):
-    enabled: bool = Field(default=False, title="Enable IPv6 for port 5000 and/or 8971")
+    enabled: bool = Field(default=False, title="Enable IPv6 for port 5001 and/or 8971")
 
 
 class NetworkingConfig(FrigateBaseModel):

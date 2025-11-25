@@ -42,7 +42,7 @@ If for example you are running the standard Add-on variant and use the [VS Code 
 
 ## VS Code Configuration Schema
 
-VS Code supports JSON schemas for automatically validating configuration files. You can enable this feature by adding `# yaml-language-server: $schema=http://frigate_host:5000/api/config/schema.json` to the beginning of the configuration file. Replace `frigate_host` with the IP address or hostname of your Frigate server. If you're using both VS Code and Frigate as an Add-on, you should use `ccab4aaf-frigate` instead. Make sure to expose the internal unauthenticated port `5000` when accessing the config from VS Code on another machine.
+VS Code supports JSON schemas for automatically validating configuration files. You can enable this feature by adding `# yaml-language-server: $schema=http://frigate_host:5001/api/config/schema.json` to the beginning of the configuration file. Replace `frigate_host` with the IP address or hostname of your Frigate server. If you're using both VS Code and Frigate as an Add-on, you should use `ccab4aaf-frigate` instead. Make sure to expose the internal unauthenticated port `5001` when accessing the config from VS Code on another machine.
 
 ## Environment Variable Substitution
 

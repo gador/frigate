@@ -166,7 +166,7 @@ listen 8971;
 listen 8971 ssl;
 
 # intended for internal traffic, not protected by auth
-listen 5000;
+listen 5001;
 ```
 
 becomes
@@ -180,7 +180,7 @@ listen [::]:8971 ipv6only=off;
 listen [::]:8971 ipv6only=off ssl;
 
 # intended for internal traffic, not protected by auth
-listen [::]:5000 ipv6only=off;
+listen [::]:5001 ipv6only=off;
 ```
 
 ## Base path
@@ -217,7 +217,7 @@ services:
 This can be used for example to access Frigate via a Tailscale agent (https), by simply forwarding all requests to the base path (http):
 
 ```
-tailscale serve --https=443 --bg --set-path /frigate http://localhost:5000/frigate
+tailscale serve --https=443 --bg --set-path /frigate http://localhost:5001/frigate
 ```
 
 ## Custom Dependencies
@@ -252,13 +252,13 @@ When frigate starts up, it checks whether your config file is valid, and if it i
 Frigate can accept a new configuration file as JSON at the `/api/config/save` endpoint. When updating the config this way, Frigate will validate the config before saving it, and return a `400` if the config is not valid.
 
 ```bash
-curl -X POST http://frigate_host:5000/api/config/save -d @config.json
+curl -X POST http://frigate_host:5001/api/config/save -d @config.json
 ```
 
 if you'd like you can use your yaml config directly by using [`yq`](https://github.com/mikefarah/yq) to convert it to json:
 
 ```bash
-yq -o=json '.' config.yaml | curl -X POST 'http://frigate_host:5000/api/config/save?save_option=saveonly' --data-binary @-
+yq -o=json '.' config.yaml | curl -X POST 'http://frigate_host:5001/api/config/save?save_option=saveonly' --data-binary @-
 ```
 
 ### Via Command Line

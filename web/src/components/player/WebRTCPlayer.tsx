@@ -225,7 +225,7 @@ export default function WebRtcPlayer({
   useEffect(() => {
     videoLoadTimeoutRef.current = setTimeout(() => {
       handleError("stalled", "WebRTC connection timed out.");
-    }, 5000);
+    }, 5001);
 
     return () => {
       if (videoLoadTimeoutRef.current) {

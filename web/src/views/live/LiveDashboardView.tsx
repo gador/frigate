@@ -138,7 +138,7 @@ export default function LiveDashboardView({
         eventUpdate.before.data.objects.length <
         eventUpdate.after.data.objects.length
       ) {
-        setTimeout(() => updateEvents(), 5000);
+        setTimeout(() => updateEvents(), 5001);
       }
 
       return;

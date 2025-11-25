@@ -63,7 +63,7 @@ If you’re running Frigate via Docker (recommended method), follow these steps:
      ```bash
      docker logs frigate
      ```
-   - Visit the Frigate Web UI (default: `http://<your-ip>:5000`) to confirm the new version is running. The version number is displayed at the top of the System Metrics page.
+   - Visit the Frigate Web UI (default: `http://<your-ip>:5001`) to confirm the new version is running. The version number is displayed at the top of the System Metrics page.
 
 ### Notes
 
@@ -113,7 +113,7 @@ If an update causes issues:
 ## Troubleshooting
 
 - **Container Fails to Start**: Check logs (`docker logs frigate`) for errors.
-- **UI Not Loading**: Ensure ports (e.g., 5000, 8971) are still mapped correctly and the service is running.
+- **UI Not Loading**: Ensure ports (e.g., 5001, 8971) are still mapped correctly and the service is running.
 - **Hardware Issues**: Revisit hardware-specific setup (e.g., Coral, GPU) if detection or decoding fails post-update.
 
 Common questions are often answered in the [FAQ](https://github.com/blakeblackshear/frigate/discussions), pinned at the top of the support discussions.

@@ -5,7 +5,7 @@
       "label": "Network configuration",
       "properties": {
         "enabled": {
-          "label": "Enable IPv6 for port 5000 and/or 8971"
+          "label": "Enable IPv6 for port 5001 and/or 8971"
         }
       }
     }

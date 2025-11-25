@@ -14,7 +14,7 @@ The following ports are available to access the Frigate web UI.
 | Port   | Description                                                                                                                                                                                                  |
 | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `8971` | Authenticated UI and API. Reverse proxies should use this port.                                                                                                                                              |
-| `5000` | Internal unauthenticated UI and API access. Access to this port should be limited. Intended to be used within the docker network for services that integrate with Frigate and do not support authentication. |
+| `5001` | Internal unauthenticated UI and API access. Access to this port should be limited. Intended to be used within the docker network for services that integrate with Frigate and do not support authentication. |
 
 ## Onboarding
 
@@ -173,7 +173,7 @@ In this example:
   - **Custom roles** → Read-only access limited to the cameras defined in `auth.roles[role]`.
 - Ensure your **proxy sends both user and role headers** for proper role enforcement.
 
-**Unauthenticated Port (5000)**
+**Unauthenticated Port (5001)**
 
 - Headers are **ignored** for role enforcement.
 - All requests are treated as **anonymous**.
@@ -247,7 +247,7 @@ If you want to provide access to all cameras to a specific user, just use the **
 
 ### Managing User Roles
 
-1. Log in as an **admin** user via port `8971` (preferred), or unauthenticated via port `5000`.
+1. Log in as an **admin** user via port `8971` (preferred), or unauthenticated via port `5001`.
 2. Navigate to **Settings**.
 3. In the **Users** section, edit a user’s role by selecting from available roles (admin, viewer, or custom).
 4. In the **Roles** section, add/edit/delete custom roles (select cameras via switches). Deleting a role auto-reassigns users to "viewer".
@@ -256,14 +256,14 @@ If you want to provide access to all cameras to a specific user, just use the **
 
 When using the authenticated port (`8971`), roles are validated via the JWT token or proxy headers (e.g., `remote-role`).
 
-On the internal **unauthenticated** port (`5000`), roles are **not enforced**. All requests are treated as **anonymous**, granting access equivalent to the **admin** role without restrictions.
+On the internal **unauthenticated** port (`5001`), roles are **not enforced**. All requests are treated as **anonymous**, granting access equivalent to the **admin** role without restrictions.
 
 To use role-based access control, you must connect to Frigate via the **authenticated port (`8971`)** directly or through a reverse proxy.
 
 ### Role Visibility in the UI
 
 - When logged in via port `8971`, your **username and role** are displayed in the **account menu** (bottom corner).
-- When using port `5000`, the UI will always display "anonymous" for the username and "admin" for the role.
+- When using port `5001`, the UI will always display "anonymous" for the username and "admin" for the role.
 
 ### Managing User Roles
 

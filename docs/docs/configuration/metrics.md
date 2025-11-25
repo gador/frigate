@@ -51,7 +51,7 @@ scrape_configs:
   - job_name: 'frigate'
     metrics_path: '/api/metrics'
     static_configs:
-      - targets: ['frigate:5000']
+      - targets: ['frigate:5001']
     scrape_interval: 15s
 ```
 

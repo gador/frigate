@@ -45,7 +45,7 @@ function MSEPlayer({
   onError,
 }: MSEPlayerProps) {
   const RECONNECT_TIMEOUT: number = 10000;
-  const BUFFERING_COOLDOWN_TIMEOUT: number = 5000;
+  const BUFFERING_COOLDOWN_TIMEOUT: number = 5001;
 
   const CODECS: string[] = [
     "avc1.640029", // H.264 high 4.1 (Chromecast 1st and 2nd Gen)
@@ -718,7 +718,7 @@ function MSEPlayer({
             // too many mse errors, try jsmpeg
             handleError("startup", `Max error count ${errorCount} exceeded.`);
           } else {
-            reconnect(5000);
+            reconnect(5001);
           }
         }
       }}

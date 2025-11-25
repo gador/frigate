@@ -361,7 +361,7 @@ def auth(request: Request):
 
     # dont require auth if the request is on the internal port
     # this header is set by Frigate's nginx proxy, so it cant be spoofed
-    if int(request.headers.get("x-server-port", default=0)) == 5000:
+    if int(request.headers.get("x-server-port", default=0)) == 5001:
         success_response.headers["remote-user"] = "anonymous"
         success_response.headers["remote-role"] = "admin"
         return success_response

@@ -75,7 +75,7 @@ tls:
 
 # Optional: IPv6 configuration
 networking:
-  # Optional: Enable IPv6 on 5000, and 8971 if tls is configured (default: shown below)
+  # Optional: Enable IPv6 on 5001, and 8971 if tls is configured (default: shown below)
   ipv6:
     enabled: False
 
@@ -343,7 +343,7 @@ objects:
     person:
       # Optional: minimum size of the bounding box for the detected object (default: 0).
       # Can be specified as an integer for width*height in pixels or as a decimal representing the percentage of the frame (0.000001 to 0.99).
-      min_area: 5000
+      min_area: 5001
       # Optional: maximum size of the bounding box for the detected object (default: 24000000).
       # Can be specified as an integer for width*height in pixels or as a decimal representing the percentage of the frame (0.000001 to 0.99).
       max_area: 100000
@@ -829,7 +829,7 @@ cameras:
         # NOTE: The global and camera filters are applied upstream.
         filters:
           person:
-            min_area: 5000
+            min_area: 5001
             max_area: 100000
             threshold: 0.7
 

@@ -47,7 +47,7 @@ that card.
 
 ## Configuration
 
-When configuring the integration, you will be asked for the `URL` of your Frigate instance which can be pointed at the internal unauthenticated port (`5000`) or the authenticated port (`8971`) for your instance. This may look like `http://<host>:5000/`.
+When configuring the integration, you will be asked for the `URL` of your Frigate instance which can be pointed at the internal unauthenticated port (`5001`) or the authenticated port (`8971`) for your instance. This may look like `http://<host>:5001/`.
 
 ### Docker Compose Examples
 
@@ -55,7 +55,7 @@ If you are running Home Assistant and Frigate with Docker Compose on the same de
 
 #### Home Assistant running with host networking
 
-It is not recommended to run Frigate in host networking mode. In this example, you would use `http://172.17.0.1:5000` or `http://172.17.0.1:8971` when configuring the integration.
+It is not recommended to run Frigate in host networking mode. In this example, you would use `http://172.17.0.1:5001` or `http://172.17.0.1:8971` when configuring the integration.
 
 ```yaml
 services:
@@ -68,7 +68,7 @@ services:
     image: ghcr.io/blakeblackshear/frigate:stable
     ...
     ports:
-      - "172.17.0.1:5000:5000"
+      - "172.17.0.1:5001:5001"
       ...
 ```
 
@@ -87,7 +87,7 @@ services:
     image: ghcr.io/blakeblackshear/frigate:stable
     ...
     ports:
-      # - "172.17.0.1:5000:5000"
+      # - "172.17.0.1:5001:5001"
       ...
 ```
 
@@ -97,10 +97,10 @@ If you are using Home Assistant Add-on, the URL should be one of the following d
 
 | Add-on Variant             | URL                                       |
 | -------------------------- | ----------------------------------------- |
-| Frigate                    | `http://ccab4aaf-frigate:5000`            |
-| Frigate (Full Access)      | `http://ccab4aaf-frigate-fa:5000`         |
-| Frigate Beta               | `http://ccab4aaf-frigate-beta:5000`       |
-| Frigate Beta (Full Access) | `http://ccab4aaf-frigate-fa-beta:5000`    |
+| Frigate                    | `http://ccab4aaf-frigate:5001`            |
+| Frigate (Full Access)      | `http://ccab4aaf-frigate-fa:5001`         |
+| Frigate Beta               | `http://ccab4aaf-frigate-beta:5001`       |
+| Frigate Beta (Full Access) | `http://ccab4aaf-frigate-fa-beta:5001`    |
 
 ### Frigate running on a separate machine
 
@@ -130,7 +130,7 @@ services:
 
 #### Tailscale or other private networking
 
-Use `http://<frigate_device_tailscale_ip>:5000` as the URL for the integration.
+Use `http://<frigate_device_tailscale_ip>:5001` as the URL for the integration.
 
 ```yaml
 services:
@@ -138,7 +138,7 @@ services:
     image: ghcr.io/blakeblackshear/frigate:stable
     ...
     ports:
-      - "<tailscale_ip>:5000:5000"
+      - "<tailscale_ip>:5001:5001"
       ...
 ```
 

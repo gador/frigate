@@ -41,7 +41,7 @@ The following ports are used by Frigate and can be mapped via docker as required
 | Port   | Description                                                                                                                                                                |
 | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `8971` | Authenticated UI and API access without TLS. Reverse proxies should use this port.                                                                                         |
-| `5000` | Internal unauthenticated UI and API access. Access to this port should be limited. Intended to be used within the docker network for services that integrate with Frigate. |
+| `5001` | Internal unauthenticated UI and API access. Access to this port should be limited. Intended to be used within the docker network for services that integrate with Frigate. |
 | `8554` | RTSP restreaming. By default, these streams are unauthenticated. Authentication can be configured in go2rtc section of config.                                             |
 | `8555` | WebRTC connections for cameras with two-way talk support.                                                                                                                  |
 
@@ -192,7 +192,7 @@ If you can't use Docker Compose, you can run the container with something simila
     --privileged=true \
     -p 8971:8971 \
     -p 8554:8554 \
-    -p 5000:5000 \
+    -p 5001:5001 \
     -p 8555:8555/tcp \
     -p 8555:8555/udp \
     --device /dev/memx0 \
@@ -316,7 +316,7 @@ services:
           size: 1000000000
     ports:
       - "8971:8971"
-      # - "5000:5000" # Internal unauthenticated access. Expose carefully.
+      # - "5001:5001" # Internal unauthenticated access. Expose carefully.
       - "8554:8554" # RTSP feeds
       - "8555:8555/tcp" # WebRTC over tcp
       - "8555:8555/udp" # WebRTC over udp
